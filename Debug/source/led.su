@@ -1,0 +1,4 @@
+fsl_gpio.h:175:20:GPIO_SetPinsOutput	16	static
+fsl_gpio.h:197:20:GPIO_TogglePinsOutput	16	static
+led.c:9:6:delayMS	24	static
+led.c:17:6:ledShiftState	24	static
