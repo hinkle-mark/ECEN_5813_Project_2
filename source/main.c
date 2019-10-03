@@ -30,7 +30,10 @@
  
 /**
  * @file    PES_Project_2.c
- * @brief   Application entry point.
+ * @author	Mark Hinkle and Mike Fruge
+ * @description	Based on the build target, this project will become a .axf or .exe and run either on the Freedom
+ * Board or locally on any PC with gcc
+ *
  */
 #include <flash.h>
 #include <main.h>
@@ -45,31 +48,6 @@
 #endif
 
 /* TODO: insert other include files here. */
-
-static uint16_t DELAY_TIMES[DELAY_CNT] =
-{
-	3000,
-	1000,
-	2000,
-	600,
-	1000,
-	400,
-	1000,
-	200,
-	500,
-	100,
-	500,
-	100,
-	500,
-	100,
-	1000,
-	200,
-	1000,
-	400,
-	2000,
-	600
-};
-
 /*
  * @brief   Application entry point.
  */
@@ -83,9 +61,7 @@ int main(void) {
   	/* Init FSL debug console. */
     BOARD_InitDebugConsole();
 
-    LED_RED_INIT(LOGIC_LED_OFF);
-    LED_BLUE_INIT(LOGIC_LED_OFF);
-    LED_GREEN_INIT(LOGIC_LED_OFF);
+    initLEDs();
 
     PRINTF("Board Initialized!\n");
 #endif /*FB */

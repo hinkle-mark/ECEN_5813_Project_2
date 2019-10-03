@@ -155,7 +155,7 @@ pc_debug: $(PC_EXE)
 ############################
 # Clean target
 clean:
-	-$(RM) $(EXECUTABLES) $(OBJS) $(EXE)
+	-$(RM) $(EXECUTABLES) $(OBJS) $(EXE) $(PC_EXE)
 	-$(RM) ./debug/*.map
 	-@echo ' '
 ############################

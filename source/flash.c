@@ -1,3 +1,8 @@
+/* @file	flash.c
+ * @authors	Mark Hinkle and Mike Fruge
+ * @description	This file implements the flashing functionality of the LED
+ *
+ */
 #include <flash.h>
 #include <main.h>
 
@@ -6,6 +11,12 @@
 #include "board.h"
 #endif
 
+
+/*
+ * @function	delayMS
+ * @description	This function will delay for aprox. the amount of time in ms entered
+ * @param[in]	uint16_t delay: Time to delay for
+ */
 void delayMS(uint16_t delay)
 {
 	for(uint32_t i = 0; i < MS_TO_TICKS(delay); i++)
@@ -14,6 +25,26 @@ void delayMS(uint16_t delay)
 	}
 }
 
+
+/*
+ * @function	initLEDs
+ * @description	Initializes RGB LED's for GPIO use
+ */
+
+void initLEDs(void)
+{
+    LED_RED_INIT(LOGIC_LED_OFF);
+    LED_BLUE_INIT(LOGIC_LED_OFF);
+    LED_GREEN_INIT(LOGIC_LED_OFF);
+}
+
+/*
+ * @function	ledShiftState
+ * @description	This function will take the desired led color and determine whether to turn the LED on or off or to change color of active LED
+ * @param[in]	*color: Pointer to led_color enum
+ * @param[in]	*cycle_cnt: Pointer to the number of times the given LED has been cycled
+ * @param[in]	delay_time: The amout of time to delay the LED from changing its state
+ */
 void ledShiftState(volatile led_color * color, volatile uint8_t * cycle_cnt, uint16_t delay_time)
 {
 	if((*cycle_cnt) == (CYCLE_PERIOD - 1))

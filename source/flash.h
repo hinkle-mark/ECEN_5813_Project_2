@@ -10,5 +10,6 @@ typedef enum {
 } led_color;
 
 void delayMS(uint16_t delay);
+void initLEDs(void);
 void ledShiftState(volatile led_color * color, volatile uint8_t * cycle_cnt, uint16_t delay_time);
 

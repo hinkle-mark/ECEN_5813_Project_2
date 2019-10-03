@@ -31,3 +31,28 @@
 #define MAX_CYCLES 1
 #define DELAY_CNT  20                    //number of states
 #define MS_TO_TICKS(x) (uint32_t)((CLK_FREQ / 1000) * x)
+
+static const uint16_t DELAY_TIMES[DELAY_CNT] =
+{
+	3000,
+	1000,
+	2000,
+	600,
+	1000,
+	400,
+	1000,
+	200,
+	500,
+	100,
+	500,
+	100,
+	500,
+	100,
+	1000,
+	200,
+	1000,
+	400,
+	2000,
+	600
+};
+
