@@ -43,7 +43,7 @@ void initLEDs(void)
  * @description	This function will take the desired led color and determine whether to turn the LED on or off or to change color of active LED
  * @param[in]	*color: Pointer to led_color enum
  * @param[in]	*cycle_cnt: Pointer to the number of times the given LED has been cycled
- * @param[in]	delay_time: The amout of time to delay the LED from changing its state
+ * @param[in]	delay_time: The amount of time to delay the LED from changing its state
  */
 void ledShiftState(volatile led_color * color, volatile uint8_t * cycle_cnt, uint16_t delay_time)
 {
